@@ -1,0 +1,11 @@
+{
+  "name": "docs-sync",
+  "description": "Keep local project documentation in sync with code changes",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "docs-sync",
+      "source": "./skills/docs-sync/SKILL.md"
+    }
+  ]
+}

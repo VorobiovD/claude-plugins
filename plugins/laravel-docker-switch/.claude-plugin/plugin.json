@@ -1,0 +1,11 @@
+{
+  "name": "laravel-docker-switch",
+  "description": "Switch Laravel between local and Docker environments",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "laravel-docker-switch",
+      "source": "./skills/laravel-docker-switch/SKILL.md"
+    }
+  ]
+}

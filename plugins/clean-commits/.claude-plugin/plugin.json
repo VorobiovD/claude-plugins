@@ -1,0 +1,11 @@
+{
+  "name": "clean-commits",
+  "description": "Keep git history clean — no AI fingerprints, focused commit messages",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "clean-commits",
+      "source": "./skills/clean-commits/SKILL.md"
+    }
+  ]
+}
