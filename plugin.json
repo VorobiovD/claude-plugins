@@ -1,0 +1,9 @@
+{
+  "name": "claude-plugins",
+  "version": "1.0.0",
+  "description": "Shared Claude Code skills for cost optimization and productivity",
+  "skills": [
+    "skills/cost-optimization",
+    "skills/slack-message"
+  ]
+}
