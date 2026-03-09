@@ -1,0 +1,11 @@
+{
+  "name": "cost-optimization",
+  "description": "Auto-active rules that reduce token usage by 30-60%",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "cost-optimization",
+      "source": "./skills/cost-optimization/SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "slack-message",
+  "description": "Format messages with Slack markup and copy to clipboard",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "slack-message",
+      "source": "./skills/slack-message/SKILL.md"
+    }
+  ]
+}

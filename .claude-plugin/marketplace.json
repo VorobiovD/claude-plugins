@@ -1,0 +1,31 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "Dima Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "metadata": {
+    "description": "Claude Code skills for cost optimization and productivity",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cost-optimization",
+      "source": "./plugins/cost-optimization",
+      "description": "Auto-active rules that reduce token usage by 30-60%",
+      "version": "1.0.0",
+      "category": "productivity",
+      "license": "MIT",
+      "keywords": ["cost", "tokens", "optimization", "haiku", "sonnet"]
+    },
+    {
+      "name": "slack-message",
+      "source": "./plugins/slack-message",
+      "description": "Format messages with Slack markup and copy to clipboard",
+      "version": "1.0.0",
+      "category": "productivity",
+      "license": "MIT",
+      "keywords": ["slack", "formatting", "clipboard", "messaging"]
+    }
+  ]
+}
