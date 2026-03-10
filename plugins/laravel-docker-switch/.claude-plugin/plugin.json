@@ -10,6 +10,12 @@
   },
   "repository": "https://github.com/VorobiovD/claude-plugins",
   "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/laravel-docker-switch",
+  "commands": [
+    {
+      "name": "laravel-docker-switch",
+      "source": "./commands/laravel-docker-switch.md"
+    }
+  ],
   "skills": [
     {
       "name": "laravel-docker-switch",

@@ -55,20 +55,13 @@ Add to `~/.claude/settings.json`:
 
 Replace `cost-optimization` with any plugin name from the table above.
 
-## Known issue: slash commands not auto-discovered
+## Note on slash command discovery
 
-Claude Code currently has a bug where user-invocable skills from community marketplaces don't appear in the skill discovery system ([#15178](https://github.com/anthropics/claude-code/issues/15178)). Auto-active plugins (`cost-optimization`, `clean-commits`, `docs-sync`) work fine. Slash commands (`/slack-message`, `/laravel-docker-switch`) may not be found automatically.
+Claude Code has a known bug where user-invocable skills from community marketplaces may not appear in autocomplete ([#15178](https://github.com/anthropics/claude-code/issues/15178)). This plugin ships both `commands/` and `skills/` for `/slack-message` and `/laravel-docker-switch` to ensure reliable discovery. Commands are always visible in autocomplete regardless of the bug.
 
-**Workarounds:**
-
-- Type `/slack-message` or `/laravel-docker-switch` directly — manual invocation still works
-- Copy skill files to `~/.claude/skills/` for reliable discovery:
-  ```
-  mkdir -p ~/.claude/skills/slack-message ~/.claude/skills/laravel-docker-switch
-  cp plugins/slack-message/skills/slack-message/SKILL.md ~/.claude/skills/slack-message/
-  cp plugins/laravel-docker-switch/skills/laravel-docker-switch/SKILL.md ~/.claude/skills/laravel-docker-switch/
-  ```
-- Clear plugin cache if skills aren't loading: `rm -rf ~/.claude/plugins/cache`
+If slash commands still don't appear after install, try:
+- Clear plugin cache: `rm -rf ~/.claude/plugins/cache`
+- Restart Claude Code
 
 ## Clipboard permissions (for slack-message)
 

@@ -1,6 +1,6 @@
 # laravel-docker-switch
 
-User-invocable skill to toggle a Laravel app between local and Docker environments.
+Toggle a Laravel app between local and Docker environments.
 
 ## Usage
 
@@ -8,6 +8,8 @@ User-invocable skill to toggle a Laravel app between local and Docker environmen
 /laravel-docker-switch local
 /laravel-docker-switch docker
 ```
+
+Available as both a command (always in autocomplete) and a skill (auto-detected by context).
 
 ## What it does
 

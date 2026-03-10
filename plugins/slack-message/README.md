@@ -1,12 +1,14 @@
 # slack-message
 
-User-invocable skill that formats messages with Slack markup and copies to clipboard.
+Format messages with Slack markup and copy to clipboard.
 
 ## Usage
 
 ```
 /slack-message [message topic or content]
 ```
+
+Available as both a command (always in autocomplete) and a skill (auto-detected by context).
 
 ## What it does
 

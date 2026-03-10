@@ -1,6 +1,6 @@
 ---
 name: laravel-docker-switch
-description: "Switch a Laravel app between local and Docker environments"
+description: "Switch Laravel between local and Docker environments"
 argument-hint: "[local|docker]"
 ---
 

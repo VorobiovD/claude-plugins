@@ -10,6 +10,12 @@
   },
   "repository": "https://github.com/VorobiovD/claude-plugins",
   "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/slack-message",
+  "commands": [
+    {
+      "name": "slack-message",
+      "source": "./commands/slack-message.md"
+    }
+  ],
   "skills": [
     {
       "name": "slack-message",

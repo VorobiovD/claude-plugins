@@ -1,6 +1,6 @@
 ---
 name: slack-message
-description: "Use when the user asks to prepare, write, draft, or send a message for Slack, to colleagues, to a channel, or for sharing with the team. Format and copy to clipboard with Slack markup."
+description: "Format and copy a Slack-ready message to clipboard"
 argument-hint: "[message topic or content]"
 ---
 
