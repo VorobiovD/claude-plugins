@@ -2,6 +2,14 @@
   "name": "docs-sync",
   "description": "Keep local project documentation in sync with code changes",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["docs", "documentation", "sync", "local"],
+  "author": {
+    "name": "Dmytro Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "repository": "https://github.com/VorobiovD/claude-plugins",
+  "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/docs-sync",
   "skills": [
     {
       "name": "docs-sync",

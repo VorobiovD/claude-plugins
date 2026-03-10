@@ -2,6 +2,14 @@
   "name": "slack-message",
   "description": "Format messages with Slack markup and copy to clipboard",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["slack", "formatting", "clipboard", "messaging"],
+  "author": {
+    "name": "Dmytro Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "repository": "https://github.com/VorobiovD/claude-plugins",
+  "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/slack-message",
   "skills": [
     {
       "name": "slack-message",

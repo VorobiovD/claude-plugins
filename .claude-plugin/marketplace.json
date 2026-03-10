@@ -1,12 +1,12 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-plugins",
+  "description": "Claude Code skills for cost optimization, clean workflows, and productivity",
+  "version": "1.1.0",
   "owner": {
     "name": "Dmytro Vorobiov",
+    "email": "dmytro.claw@gmail.com",
     "url": "https://github.com/VorobiovD"
-  },
-  "metadata": {
-    "description": "Claude Code skills for cost optimization, clean workflows, and productivity",
-    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -16,7 +16,13 @@
       "version": "1.0.0",
       "category": "productivity",
       "license": "MIT",
-      "keywords": ["cost", "tokens", "optimization", "haiku", "sonnet"]
+      "keywords": ["cost", "tokens", "optimization", "haiku", "sonnet"],
+      "author": {
+        "name": "Dmytro Vorobiov",
+        "url": "https://github.com/VorobiovD"
+      },
+      "repository": "https://github.com/VorobiovD/claude-plugins",
+      "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/cost-optimization"
     },
     {
       "name": "slack-message",
@@ -25,7 +31,13 @@
       "version": "1.0.0",
       "category": "productivity",
       "license": "MIT",
-      "keywords": ["slack", "formatting", "clipboard", "messaging"]
+      "keywords": ["slack", "formatting", "clipboard", "messaging"],
+      "author": {
+        "name": "Dmytro Vorobiov",
+        "url": "https://github.com/VorobiovD"
+      },
+      "repository": "https://github.com/VorobiovD/claude-plugins",
+      "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/slack-message"
     },
     {
       "name": "clean-commits",
@@ -34,7 +46,13 @@
       "version": "1.0.0",
       "category": "workflow",
       "license": "MIT",
-      "keywords": ["git", "commits", "clean", "history", "professional"]
+      "keywords": ["git", "commits", "clean", "history", "professional"],
+      "author": {
+        "name": "Dmytro Vorobiov",
+        "url": "https://github.com/VorobiovD"
+      },
+      "repository": "https://github.com/VorobiovD/claude-plugins",
+      "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/clean-commits"
     },
     {
       "name": "docs-sync",
@@ -43,7 +61,13 @@
       "version": "1.0.0",
       "category": "workflow",
       "license": "MIT",
-      "keywords": ["docs", "documentation", "sync", "local"]
+      "keywords": ["docs", "documentation", "sync", "local"],
+      "author": {
+        "name": "Dmytro Vorobiov",
+        "url": "https://github.com/VorobiovD"
+      },
+      "repository": "https://github.com/VorobiovD/claude-plugins",
+      "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/docs-sync"
     },
     {
       "name": "laravel-docker-switch",
@@ -52,7 +76,13 @@
       "version": "1.0.0",
       "category": "laravel",
       "license": "MIT",
-      "keywords": ["laravel", "docker", "local", "switch", "environment"]
+      "keywords": ["laravel", "docker", "local", "switch", "environment"],
+      "author": {
+        "name": "Dmytro Vorobiov",
+        "url": "https://github.com/VorobiovD"
+      },
+      "repository": "https://github.com/VorobiovD/claude-plugins",
+      "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/laravel-docker-switch"
     }
   ]
 }

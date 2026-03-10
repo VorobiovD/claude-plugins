@@ -2,6 +2,14 @@
   "name": "clean-commits",
   "description": "Keep git history clean — no AI fingerprints, focused commit messages",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["git", "commits", "clean", "history", "professional"],
+  "author": {
+    "name": "Dmytro Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "repository": "https://github.com/VorobiovD/claude-plugins",
+  "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/clean-commits",
   "skills": [
     {
       "name": "clean-commits",

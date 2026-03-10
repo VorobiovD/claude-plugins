@@ -1,0 +1,124 @@
+name: Validate Plugins
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate marketplace.json
+        run: |
+          echo "Validating marketplace.json..."
+          python3 -c "
+          import json, sys
+
+          with open('.claude-plugin/marketplace.json') as f:
+              marketplace = json.load(f)
+
+          required = ['name', 'description', 'version', 'owner', 'plugins']
+          for field in required:
+              if field not in marketplace:
+                  print(f'ERROR: Missing required field: {field}')
+                  sys.exit(1)
+
+          if 'name' not in marketplace['owner']:
+              print('ERROR: owner.name is required')
+              sys.exit(1)
+
+          for plugin in marketplace['plugins']:
+              for field in ['name', 'source', 'description', 'version']:
+                  if field not in plugin:
+                      print(f'ERROR: Plugin {plugin.get(\"name\", \"unknown\")} missing field: {field}')
+                      sys.exit(1)
+
+          print(f'Marketplace OK: {len(marketplace[\"plugins\"])} plugins registered')
+          "
+
+      - name: Validate plugin.json files
+        run: |
+          echo "Validating plugin manifests..."
+          python3 -c "
+          import json, sys, glob
+
+          errors = 0
+          for path in sorted(glob.glob('plugins/*/.claude-plugin/plugin.json')):
+              with open(path) as f:
+                  plugin = json.load(f)
+
+              name = plugin.get('name', 'unknown')
+              for field in ['name', 'description', 'version', 'skills']:
+                  if field not in plugin:
+                      print(f'ERROR: {path} missing field: {field}')
+                      errors += 1
+
+              for skill in plugin.get('skills', []):
+                  if 'name' not in skill or 'source' not in skill:
+                      print(f'ERROR: {path} skill missing name or source')
+                      errors += 1
+
+              print(f'  OK: {name}')
+
+          if errors:
+              sys.exit(1)
+          print(f'All plugin manifests valid')
+          "
+
+      - name: Validate SKILL.md files exist
+        run: |
+          echo "Checking skill files..."
+          python3 -c "
+          import json, glob, os, sys
+
+          errors = 0
+          for path in sorted(glob.glob('plugins/*/.claude-plugin/plugin.json')):
+              plugin_dir = os.path.dirname(os.path.dirname(path))
+              with open(path) as f:
+                  plugin = json.load(f)
+
+              for skill in plugin.get('skills', []):
+                  skill_path = os.path.join(plugin_dir, skill['source'])
+                  if not os.path.exists(skill_path):
+                      print(f'ERROR: Missing skill file: {skill_path}')
+                      errors += 1
+                  else:
+                      print(f'  OK: {skill_path}')
+
+          if errors:
+              sys.exit(1)
+          print('All skill files present')
+          "
+
+      - name: Cross-reference marketplace with plugins
+        run: |
+          echo "Cross-referencing marketplace and plugin directories..."
+          python3 -c "
+          import json, glob, os, sys
+
+          with open('.claude-plugin/marketplace.json') as f:
+              marketplace = json.load(f)
+
+          registered = {p['name'] for p in marketplace['plugins']}
+          on_disk = {os.path.basename(os.path.dirname(os.path.dirname(p)))
+                     for p in glob.glob('plugins/*/.claude-plugin/plugin.json')}
+
+          missing_from_marketplace = on_disk - registered
+          missing_from_disk = registered - on_disk
+
+          errors = 0
+          for name in missing_from_marketplace:
+              print(f'WARNING: Plugin {name} exists on disk but not in marketplace.json')
+              errors += 1
+          for name in missing_from_disk:
+              print(f'ERROR: Plugin {name} registered in marketplace.json but not found on disk')
+              errors += 1
+
+          if errors:
+              sys.exit(1)
+          print(f'All {len(registered)} plugins correctly cross-referenced')
+          "

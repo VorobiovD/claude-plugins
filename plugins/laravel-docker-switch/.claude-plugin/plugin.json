@@ -2,6 +2,14 @@
   "name": "laravel-docker-switch",
   "description": "Switch Laravel between local and Docker environments",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["laravel", "docker", "local", "switch", "environment"],
+  "author": {
+    "name": "Dmytro Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "repository": "https://github.com/VorobiovD/claude-plugins",
+  "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/laravel-docker-switch",
   "skills": [
     {
       "name": "laravel-docker-switch",

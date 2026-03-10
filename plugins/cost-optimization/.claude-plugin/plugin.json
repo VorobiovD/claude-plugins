@@ -2,6 +2,14 @@
   "name": "cost-optimization",
   "description": "Auto-active rules that reduce token usage by 30-60%",
   "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["cost", "tokens", "optimization", "haiku", "sonnet"],
+  "author": {
+    "name": "Dmytro Vorobiov",
+    "url": "https://github.com/VorobiovD"
+  },
+  "repository": "https://github.com/VorobiovD/claude-plugins",
+  "homepage": "https://github.com/VorobiovD/claude-plugins/tree/main/plugins/cost-optimization",
   "skills": [
     {
       "name": "cost-optimization",

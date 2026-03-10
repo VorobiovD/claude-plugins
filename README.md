@@ -55,6 +55,21 @@ Add to `~/.claude/settings.json`:
 
 Replace `cost-optimization` with any plugin name from the table above.
 
+## Known issue: slash commands not auto-discovered
+
+Claude Code currently has a bug where user-invocable skills from community marketplaces don't appear in the skill discovery system ([#15178](https://github.com/anthropics/claude-code/issues/15178)). Auto-active plugins (`cost-optimization`, `clean-commits`, `docs-sync`) work fine. Slash commands (`/slack-message`, `/laravel-docker-switch`) may not be found automatically.
+
+**Workarounds:**
+
+- Type `/slack-message` or `/laravel-docker-switch` directly — manual invocation still works
+- Copy skill files to `~/.claude/skills/` for reliable discovery:
+  ```
+  mkdir -p ~/.claude/skills/slack-message ~/.claude/skills/laravel-docker-switch
+  cp plugins/slack-message/skills/slack-message/SKILL.md ~/.claude/skills/slack-message/
+  cp plugins/laravel-docker-switch/skills/laravel-docker-switch/SKILL.md ~/.claude/skills/laravel-docker-switch/
+  ```
+- Clear plugin cache if skills aren't loading: `rm -rf ~/.claude/plugins/cache`
+
 ## Clipboard permissions (for slack-message)
 
 Add to `~/.claude/settings.json` under `permissions.allow`:
